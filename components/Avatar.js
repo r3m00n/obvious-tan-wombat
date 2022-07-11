@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { supabase } from "../utils/supabaseClient";
 
@@ -56,11 +57,12 @@ export default function Avatar({ url, size, onUpload }) {
   return (
     <div>
       {avatarUrl ? (
-        <img
+        <Image
           src={avatarUrl}
           alt="Avatar"
           className="avatar image"
-          style={{ height: size, width: size }}
+          width={size}
+          height={size}
         />
       ) : (
         <div
